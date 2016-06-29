@@ -1,0 +1,15 @@
+<h3>Birthdays By Order </h3>
+
+<%= form_tag root_path do %>
+	<%= date_field_tag :date, params[:date] %>
+	<%= submit_tag "Search", :name => nil %>
+<% end %>
+<ul>
+	<li> <%= @today %></li>
+	<% @afterDates.each do |i| %>
+	<li><%= i[:name] %> <%= i[:birthdate].month%> - <%= i[:birthdate].day%></li>
+	<% end %>
+	<% @beforeDates.each do |i| %>
+	<li><%= i[:name] %> <%= i[:birthdate].month%> - <%= i[:birthdate].day%></li>
+	<% end %>
+</ul>
